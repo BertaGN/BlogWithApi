@@ -40,21 +40,21 @@
     </header>
     <main>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="post-modal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Post Title</h1>
+          <h1 class="modal-title fs-5" id="post-modal"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Post Body</p>
-          <p>User Title</p>
-          <p>User Name</p>
-          <p>User Email</p>
-          <p>Comments</p>
-          <button type="button" class="btn btn-primary">Load Comments</button>
-          <div>Comments Containerc</div>
+          <p id="modal-post-body">Post Body</p>
+          <p>User</p>
+          <p id="modal-user-name">User Name</p>
+          <p id="modal-user-email">User Email</p>
+          <p id="modal-comments">Comments</p>
+          <button type="button" class="btn btn-primary" id="load-comments">Load Comments</button>
+          <div id="modal-comments-cont" class="d-none" >Comments Container</div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
