@@ -97,10 +97,10 @@ function deletePost(e) {
   }).then((response) => {
     if (response.status !== 200) {
       return;
-    } else {
+    } 
       document.getElementById(postId).remove();
     }
-  });
+  );
 
   fetch(`http://localhost:3000/images/${postId}`, {
     method: "DELETE",

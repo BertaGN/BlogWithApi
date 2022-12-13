@@ -2,12 +2,6 @@
   "posts": [
     {
       "userId": 3,
-      "id": 22,
-      "title": "dolor sint quo a velit explicabo quia nam",
-      "body": "eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse"
-    },
-    {
-      "userId": 3,
       "id": 26,
       "title": "est et quae odit qui non",
       "body": "similique esse doloribus nihil accusamus\nomnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus\nperspiciatis cum ut laudantium\nomnis aut molestiae vel vero"
@@ -691,14 +685,6 @@
   ],
   "images": [
     {
-      "id": "22",
-      "author": "Alejandro Escamilla",
-      "width": 4434,
-      "height": 3729,
-      "url": "https://unsplash.com/photos/du_OrQAA4r0",
-      "download_url": "https://picsum.photos/id/22/4434/3729"
-    },
-    {
       "id": "26",
       "author": "Vadim Sherbakov",
       "width": 4209,
@@ -1308,41 +1294,6 @@
     }
   ],
   "comments": [
-    {
-      "postId": 22,
-      "id": 106,
-      "name": "maiores placeat facere quam pariatur",
-      "email": "Allen@richard.biz",
-      "body": "dolores debitis voluptatem ab hic\nmagnam alias qui est sunt\net porro velit et repellendus occaecati est\nsequi quia odio deleniti illum"
-    },
-    {
-      "postId": 22,
-      "id": 107,
-      "name": "in ipsam vel id impedit possimus eos voluptate",
-      "email": "Nicholaus@mikayla.ca",
-      "body": "eveniet fugit qui\nporro eaque dolores eos adipisci dolores ut\nfugit perferendis pariatur\nnumquam et repellat occaecati atque ipsum neque"
-    },
-    {
-      "postId": 22,
-      "id": 108,
-      "name": "ut veritatis corporis placeat suscipit consequatur quaerat",
-      "email": "Kayla@susanna.org",
-      "body": "at a vel sequi nostrum\nharum nam nihil\ncumque aut in dolore rerum ipsa hic ratione\nrerum cum ratione provident labore ad quisquam repellendus a"
-    },
-    {
-      "postId": 22,
-      "id": 109,
-      "name": "eveniet ut similique accusantium qui dignissimos",
-      "email": "Gideon@amina.name",
-      "body": "aliquid qui dolorem deserunt aperiam natus corporis eligendi neque\nat et sunt aut qui\nillum repellat qui excepturi laborum facilis aut omnis consequatur\net aut optio ipsa nisi enim"
-    },
-    {
-      "postId": 22,
-      "id": 110,
-      "name": "sint est odit officiis similique aut corrupti quas autem",
-      "email": "Cassidy@maribel.io",
-      "body": "cum sequi in eligendi id eaque\ndolores accusamus dolorem eum est voluptatem quisquam tempore\nin voluptas enim voluptatem asperiores voluptatibus\neius quo quos quasi voluptas earum ut necessitatibus"
-    },
     {
       "postId": 26,
       "id": 126,
