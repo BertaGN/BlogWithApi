@@ -19,6 +19,7 @@ function getPosts() {
             newPost.classList.add("card");
             newPost.classList.add("m-4");
             newPost.style.width = "18rem";
+            newPost.id = post.id;
             newPost.innerHTML = `
             <img src="${image.download_url}" class="card-img-top" alt="imatge! load="lazy"">
             <div class="card-body">
@@ -27,6 +28,7 @@ function getPosts() {
             <button type="button" onclick="getInfo(event)" userId='${post.userId}' postId='${post.id}' class="btn btn-primary view-more-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
             View More
             </button> 
+            <button type="button" postId='${post.id}' onclick="deletePost(event)" class="btn btn-danger">Delete</button>
             `;
             postsContainer.appendChild(newPost);
           });
@@ -74,5 +76,18 @@ function toggleCommentsVisibility(e){
     }else {
         loadComments.innerText = "Hide Comments"
     }
+}
+
+function deletePost(e){
+    let postId = parseInt(e.target.getAttribute("postId"))
+    
+    fetch(`http://localhost:3000/posts/${postId}`, {
+  method: 'DELETE',
+  })
+  .then(() => document.getElementById(postId).remove())
+
+  fetch(`http://localhost:3000/images/${postId}`, {
+    method: 'DELETE',
+    })
 }
  
