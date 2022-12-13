@@ -1,13 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <link rel="stylesheet" href="style.css">
+=======
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <link href="bootstrap.min.css" rel="stylesheet" />
+  <title>BM - Blog</title>
+>>>>>>> 06237e087d8e5cfc5d55b6eb5d9373f3e28eed31
 </head>
+
 <body>
-    <h1>GIT TEST</h1>
+  <header>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- View More Modal -->
+    <aside class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="post-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="post-modal"></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-post-body">Post Body</p>
+            <p>User</p>
+            <p id="modal-user-name">User Name</p>
+            <p id="modal-user-email">User Email</p>
+            <p id="modal-comments">Comments</p>
+            <button type="button" class="btn btn-info" id="load-comments">
+              Load Comments
+            </button>
+            <div id="modal-comments-cont" class="d-none"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- View More Modal -->
+    <!-- Update Modal -->
+    <aside class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="post-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="post-modal">UPDATE</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="update-modal-title" placeholder="Entere a message here" />
+              <label for="update-modal-title">Title</label>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here" id="update-modal-text"
+                style="height: 150px; resize: none"></textarea>
+              <label for="update-modal-text">Comments</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="update-modal-save">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- Update Modal -->
+    <!-- Ok Delete Modal -->
+    <div class="modal fade" id="deleted-successfully" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Post deleted successfully</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex justify-content-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/5290/5290982.png" style="height: 100px" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Ok Delete Modal -->
+    <!-- Ok Update Modal -->
+    <div class="modal fade" id="updated-successfully" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Post Updated</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex justify-content-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/5290/5290982.png" style="height: 100px" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Ok Update Modal -->
+    <section id="posts-container" class="container d-flex flex-row justify-content-between flex-wrap"></section>
+  </main>
 </body>
+
 </html>

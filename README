@@ -1,0 +1,25 @@
+// TO RUN THIS PROJECT YOU MUST INSTALL JSON-SERVER
+
+```
+
+npm install json-server
+
+```
+
+//TO START EXECUTING THE db.json FILE YOU MUST RUN
+
+```
+
+json-server --watch db.json
+
+```
+
+//NOW YOU CAN FETCH DATA FROM THE FOLLOWING ENDPOINTS
+
+```
+http://localhost:3000/posts
+http://localhost:3000/users
+http://localhost:3000/images
+http://localhost:3000/comments
+
+```
