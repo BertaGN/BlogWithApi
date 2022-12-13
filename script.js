@@ -27,7 +27,7 @@ function getPosts() {
                         newPost.style.width = "23rem";
                         newPost.id = post.id;
                         newPost.innerHTML = `
-            <img src="${image.download_url}" class="card-img-top" alt="imatge! load="lazy"">
+            <img src="${image.download_url}" class="card-img-top" alt="image" load="lazy">
             <div class="card-body">
               <p class="card-text" id="main-post-title-${post.id}">${post.title}</p>
             </div>
