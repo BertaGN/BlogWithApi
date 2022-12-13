@@ -28,7 +28,7 @@
   </header>
   <main>
     <!-- View More Modal -->
-    <aside class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="post-modal" aria-hidden="true">
+    <aside class="modal fade" id="viewMoreModal" tabindex="-1" aria-labelledby="post-modal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -41,13 +41,13 @@
             <p id="modal-user-name">User Name</p>
             <p id="modal-user-email">User Email</p>
             <p id="modal-comments">Comments</p>
-            <button type="button" class="btn btn-info" id="load-comments">
+            <button type="button" class="btn btn-outline-info" id="load-comments">
               Load Comments
             </button>
             <div id="modal-comments-cont" class="d-none"></div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">
               Close
             </button>
           </div>
@@ -124,7 +124,7 @@
       </div>
     </div>
     <!-- Ok Update Modal -->
-    <section id="posts-container" class="container d-flex flex-row justify-content-between flex-wrap"></section>
+    <section id="posts-container" class="container d-flex flex-row justify-content-evenly flex-wrap"></section>
   </main>
 </body>
 
