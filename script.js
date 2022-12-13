@@ -38,14 +38,20 @@ function getPosts() {
               <button type="button" onclick="getUpdateModalInfo(event)" postId='${post.id}' class="btn btn-outline-warning view-more-btn" data-bs-toggle="modal" data-bs-target="#updateModal"> 
                 <img src="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" style="height:25px; pointer-events:none"/>
               </button> 
-              <button type="button" postId='${post.id}' onclick="deletePost(event)" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleted-successfully">
+              <button type="button" postId='${post.id}' onclick="deletePost(event)" class="btn btn-outline-danger">
                 <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" style="height:25px; pointer-events:none"/>
               </button>
             </div>
             `;
             postsContainer.appendChild(newPost);
+          })
+          .catch((err) => {
+            console.log(err);
           });
       });
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
@@ -60,12 +66,18 @@ function getInfo(event) {
     .then((data) => {
       postModalTitle.innerText = data.title;
       postModalBody.innerText = data.body;
+    })
+    .catch((err) => {
+      console.log(err);
     });
   fetch(`http://localhost:3000/users/${userId}`)
     .then((response) => response.json())
     .then((data) => {
       postModalUserName.innerText = data.username + " - " + data.name;
       postModalUserEmail.innerText = data.email;
+    })
+    .catch((err) => {
+      console.log(err);
     });
   fetch(`http://localhost:3000/posts/${postId}/comments`)
     .then((response) => response.json())
@@ -77,6 +89,9 @@ function getInfo(event) {
             <hr style="border: 1px solid black;">
             `;
       });
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
@@ -94,16 +109,27 @@ function deletePost(e) {
 
   fetch(`http://localhost:3000/posts/${postId}`, {
     method: "DELETE",
-  }).then((response) => {
-    if (response.status !== 200) {
-      return;
-    } else {
-      document.getElementById(postId).remove();
-    }
-  });
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        let deleteSuccessModal = document.getElementById(
+          "deleted-successfully"
+        );
+        let deleteModal = new bootstrap.Modal(deleteSuccessModal);
+
+        deleteModal.show();
+
+        document.getElementById(postId).remove();
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   fetch(`http://localhost:3000/images/${postId}`, {
     method: "DELETE",
+  }).catch((err) => {
+    console.log(err);
   });
 }
 
@@ -116,6 +142,9 @@ function getUpdateModalInfo(event) {
       updateModalTitle.value = data.title;
       updateModalText.value = data.body;
       userId = data.userId;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
@@ -136,5 +165,8 @@ function updatePost(event) {
     },
   })
     .then((response) => response.json())
-    .then((json) => (mainPostTitle.innerText = json.title));
+    .then((json) => (mainPostTitle.innerText = json.title))
+    .catch((err) => {
+      console.log(err);
+    });
 }
