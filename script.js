@@ -1,8 +1,8 @@
-let postModalTitle = document.getElementById("post-modal")
-let postModalBody = document.getElementById("modal-post-body")
-let postModalUserName = document.getElementById("modal-user-name")
-let postModalUserEmail = document.getElementById("modal-user-email")
-let postModalComments = document.getElementById("modal-comments-cont")
+const postModalTitle = document.getElementById("post-modal")
+const postModalBody = document.getElementById("modal-post-body")
+const postModalUserName = document.getElementById("modal-user-name")
+const postModalUserEmail = document.getElementById("modal-user-email")
+const postModalComments = document.getElementById("modal-comments-cont")
 const postsContainer = document.getElementById("posts-container");
 const loadComments = document.getElementById("load-comments");
 loadComments.addEventListener("click", toggleCommentsVisibility);
@@ -20,7 +20,7 @@ function getPosts() {
             newPost.classList.add("m-4");
             newPost.style.width = "18rem";
             newPost.innerHTML = `
-            <img src="${image.download_url}" class="card-img-top" alt="imatge!">
+            <img src="${image.download_url}" class="card-img-top" alt="imatge! load="lazy"">
             <div class="card-body">
             <p class="card-text">${post.title}</p>
             </div>
@@ -57,14 +57,16 @@ function getInfo(event) {
     .then((response) => response.json())
     .then((data) => {
         data.map(function(comment){
-            postModalComments.innerHTML += ` <p>${comment.name}</p>
+            postModalComments.innerHTML += ` <p style="font-weight:bold;">${comment.name}</p>
             <p>${comment.body}</p>
             <p>${comment.email}</p>
+            <hr style="border: 1px solid black;">
             `;
         }) 
     })
  
 }
+
 function toggleCommentsVisibility(e){
     postModalComments.classList.toggle("d-none")
     if (postModalComments.classList.contains("d-none")){
@@ -72,6 +74,5 @@ function toggleCommentsVisibility(e){
     }else {
         loadComments.innerText = "Hide Comments"
     }
-    
 }
  
