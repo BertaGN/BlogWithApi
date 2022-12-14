@@ -9,8 +9,7 @@ body {
 }
 
 #user-img {
-  height: 100px;
-  width: 100px;
-  bottom: 75px;
-  right: 75px;
+  height: 150px;
+  width: 150px;
+  margin-right: 20px;
 }
