@@ -9,12 +9,15 @@ const loadComments = document.getElementById("load-comments");
 const saveUpdateModalBtn = document.getElementById("update-modal-save");
 const updateModalTitle = document.getElementById("update-modal-title");
 const updateModalText = document.getElementById("update-modal-text");
+const confirmDeleteModal = document.getElementById("areYouSure");
+const confirmDeleteModalBtn = document.getElementById("confirm-delete-btn");
 
 const userImg = document.getElementById("user-img");
 
-let userId = 1;
+let userId;
 let userImages = [];
 
+document.addEventListener("load", getPosts());
 loadComments.addEventListener("click", toggleCommentsVisibility);
 saveUpdateModalBtn.addEventListener("click", updatePost);
 
@@ -22,6 +25,8 @@ viewMoreModal.addEventListener("hidden.bs.modal", function () {
   postModalComments.classList.add("d-none");
   loadComments.innerText = "Load Comments";
 });
+
+confirmDeleteModalBtn.addEventListener("click", deletePostFromConfirmation);
 
 async function getPosts() {
   fetch("https://randomuser.me/api/?results=10")
@@ -84,8 +89,6 @@ async function getPosts() {
     });
 }
 
-document.addEventListener("load", getPosts());
-
 function getInfo(event) {
   let userId = event.target.getAttribute("userId");
   let postId = event.target.getAttribute("postId");
@@ -101,6 +104,7 @@ function getInfo(event) {
     .catch((err) => {
       console.log(err);
     });
+
   fetch(`http://localhost:3000/users/${userId}`)
     .then((response) => response.json())
     .then((data) => {
@@ -110,6 +114,7 @@ function getInfo(event) {
     .catch((err) => {
       console.log(err);
     });
+
   fetch(`http://localhost:3000/posts/${postId}/comments`)
     .then((response) => response.json())
     .then((data) => {
@@ -136,10 +141,20 @@ function toggleCommentsVisibility() {
   }
 }
 
-function deletePost(e) {
-  let postId = parseInt(e.target.getAttribute("postId"));
+let postIdToDelete;
 
-  fetch(`http://localhost:3000/posts/${postId}`, {
+function deletePost(e) {
+  postIdToDelete = parseInt(e.target.getAttribute("postId"));
+
+  let deleteConfirmModal = new bootstrap.Modal(confirmDeleteModal);
+  deleteConfirmModal.show();
+}
+
+function deletePostFromConfirmation() {
+  let deleteConfirmModal = new bootstrap.Modal(confirmDeleteModal);
+  deleteConfirmModal.hide();
+
+  fetch(`http://localhost:3000/posts/${postIdToDelete}`, {
     method: "DELETE",
   })
     .then((response) => {
@@ -151,14 +166,14 @@ function deletePost(e) {
 
         deleteModal.show();
 
-        document.getElementById(postId).remove();
+        document.getElementById(postIdToDelete).remove();
       }
     })
     .catch((err) => {
       console.log(err);
     });
 
-  fetch(`http://localhost:3000/images/${postId}`, {
+  fetch(`http://localhost:3000/images/${postIdToDelete}`, {
     method: "DELETE",
   }).catch((err) => {
     console.log(err);
