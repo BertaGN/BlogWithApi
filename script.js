@@ -10,7 +10,10 @@ const saveUpdateModalBtn = document.getElementById("update-modal-save");
 const updateModalTitle = document.getElementById("update-modal-title");
 const updateModalText = document.getElementById("update-modal-text");
 
+const userImg = document.getElementById("user-img");
+
 let userId = 1;
+let userImages = [];
 
 loadComments.addEventListener("click", toggleCommentsVisibility);
 saveUpdateModalBtn.addEventListener("click", updatePost);
@@ -20,7 +23,20 @@ viewMoreModal.addEventListener("hidden.bs.modal", function () {
   loadComments.innerText = "Load Comments";
 });
 
-function getPosts() {
+async function getPosts() {
+  fetch("https://randomuser.me/api/?results=10")
+    .then((res) => {
+      return res.json();
+    })
+    .then((users) => {
+      users.results.forEach((user) => {
+        userImages.push(user.picture.medium);
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   fetch("http://localhost:3000/posts")
     .then((response) => response.json())
     .then((posts) => {
@@ -31,6 +47,11 @@ function getPosts() {
             let newPost = document.createElement("article");
             newPost.classList.add("card");
             newPost.classList.add("m-4");
+            //intersection effect
+            newPost.classList.add("opacity-0");
+            newPost.style.transform = "scale(0.85)";
+            newPost.style.transitionDuration = "1s";
+            //intersection effect
             newPost.style.width = "23rem";
             newPost.id = post.id;
             newPost.innerHTML = `
@@ -50,6 +71,7 @@ function getPosts() {
               </button>
             </div>
             `;
+            observer.observe(newPost);
             postsContainer.appendChild(newPost);
           })
           .catch((err) => {
@@ -62,11 +84,13 @@ function getPosts() {
     });
 }
 
-getPosts();
+document.addEventListener("load", getPosts());
 
 function getInfo(event) {
   let userId = event.target.getAttribute("userId");
   let postId = event.target.getAttribute("postId");
+
+  userImg.src = `${userImages[userId]}`;
 
   fetch(`http://localhost:3000/posts/${postId}`)
     .then((response) => response.json())
@@ -90,7 +114,8 @@ function getInfo(event) {
     .then((response) => response.json())
     .then((data) => {
       data.map(function (comment) {
-        postModalComments.innerHTML += ` <p style="font-weight:bold;">${comment.name}</p>
+        postModalComments.innerHTML += `
+            <p style="font-weight:bold;">${comment.name}</p>
             <p>${comment.body}</p>
             <p>${comment.email}</p>
             <hr style="border: 1px solid black;">
@@ -187,4 +212,20 @@ function updatePost(event) {
     .catch((err) => {
       console.log(err);
     });
+}
+
+let options = {
+  rootMargin: "0px",
+  threshold: 0.2,
+};
+
+let observer = new IntersectionObserver(fadeIn, options);
+
+function fadeIn(entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transform = "scale(1)";
+      entry.target.classList.remove("opacity-0");
+    }
+  });
 }
