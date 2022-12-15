@@ -16,7 +16,6 @@ const confirmDeleteModal = document.getElementById("areYouSure");
 const confirmDeleteModalBtn = document.getElementById("confirm-delete-btn");
 const switchModeBtn = document.getElementById("dark-mode-btn");
 const navbar = document.getElementById("navbar");
-
 const userImg = document.getElementById("user-img");
 
 let userId;
@@ -249,6 +248,7 @@ function updatePost(event) {
     },
   })
     .then((response) => {
+      console.log(response)
       if (response.status === 200) {
         let updateSuccessModal = document.getElementById(
           "updated-successfully"
