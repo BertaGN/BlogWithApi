@@ -14,6 +14,8 @@ const updateModalTitle = document.getElementById("update-modal-title");
 const updateModalText = document.getElementById("update-modal-text");
 const confirmDeleteModal = document.getElementById("areYouSure");
 const confirmDeleteModalBtn = document.getElementById("confirm-delete-btn");
+const switchModeBtn = document.getElementById("dark-mode-btn")
+const navbar = document.getElementById("navbar")
 
 const userImg = document.getElementById("user-img");
 
@@ -21,6 +23,7 @@ let userId;
 let userImages = [];
 
 playMusicBtn.addEventListener('click', playMusic)
+switchModeBtn.addEventListener('click', darkMode)
 
 document.addEventListener("load", getPosts());
 loadComments.addEventListener("click", toggleCommentsVisibility);
@@ -32,6 +35,17 @@ viewMoreModal.addEventListener("hidden.bs.modal", function () {
 });
 
 confirmDeleteModalBtn.addEventListener("click", deletePostFromConfirmation);
+/*addEventListener("click", darkMode)*/
+
+function darkMode(e) {
+  let cards = document.getElementsByClassName ("card-body")
+  document.body.classList.toggle('dark-mode')
+  navbar.classList.toggle('dark-mode-nav')
+  for (let card of cards){
+     card.classList.toggle('dark-mode-card')
+  }
+
+}
 
 function playMusic(){
   song.volume = 0.2;

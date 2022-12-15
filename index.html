@@ -23,8 +23,8 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar bg-light">
+    <header id="navbar">
+      <nav class="navbar border-0">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
@@ -35,6 +35,7 @@
               class="d-inline-block align-text-top"
             />
           </a>
+          <button id="dark-mode-btn">Switch mode</button>
           <audio id="song" controls src="assets/music/valtary.mp3"></audio>
         </div>
       </nav>
@@ -59,10 +60,10 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body text-center">
+            <div class="modal-body">
               <p>Play music for a better experience</p>
               <p><img src="https://cdn-icons-png.flaticon.com/512/4430/4430494.png" style="height: 20px; margin-right: 20px;" >(Sigur Rós - Valtari)</p>
-              <p>We recommend you to wear headphones</p>
+              <p>We recommend you to wear headphones </p>
             </div>
             <div class="modal-footer">
               <button
@@ -325,7 +326,7 @@
         </div>
       </div>
       <!-- Are you sure modal -->
-      <section
+      <section 
         id="posts-container"
         class="container d-flex flex-row justify-content-evenly flex-wrap"
       ></section>
