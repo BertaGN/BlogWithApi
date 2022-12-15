@@ -2,6 +2,20 @@ body {
   background-color: blue;
 }
 
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#dark-mode-btn {
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 #modal-comments-cont {
   height: 30vh;
   overflow-y: scroll;
@@ -16,12 +30,37 @@ body {
 .dark-mode {
   background-color: #3e3e42;
 }
-.dark-mode-nav{
-  background-color: #3e3e42;
-  border-bottom: 1px solid rgba(195, 186, 186, 0.146);
-}
-.dark-mode-card{
-  background-color: #898992;
-  color: white;
 
+.dark-mode-nav {
+  background-color: #3e3e42c5;
 }
+.dark-mode-card {
+  background-color: #dddddd;
+  color: white;
+}
+
+audio{
+  width: 150px;
+}
+
+audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+     background-color: white;
+     }
+
+audio::-webkit-media-controls-rewind-button{
+  display: none;
+}
+audio::-webkit-media-controls-timeline-container {
+  display: none;
+}
+audio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+audio::-webkit-media-controls-timeline {
+  display: none;
+}
+

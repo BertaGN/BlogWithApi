@@ -14,16 +14,16 @@ const updateModalTitle = document.getElementById("update-modal-title");
 const updateModalText = document.getElementById("update-modal-text");
 const confirmDeleteModal = document.getElementById("areYouSure");
 const confirmDeleteModalBtn = document.getElementById("confirm-delete-btn");
-const switchModeBtn = document.getElementById("dark-mode-btn")
-const navbar = document.getElementById("navbar")
+const switchModeBtn = document.getElementById("dark-mode-btn");
+const navbar = document.getElementById("navbar");
 
 const userImg = document.getElementById("user-img");
 
 let userId;
 let userImages = [];
 
-playMusicBtn.addEventListener('click', playMusic)
-switchModeBtn.addEventListener('click', darkMode)
+playMusicBtn.addEventListener("click", playMusic);
+switchModeBtn.addEventListener("click", darkMode);
 
 document.addEventListener("load", getPosts());
 loadComments.addEventListener("click", toggleCommentsVisibility);
@@ -38,18 +38,25 @@ confirmDeleteModalBtn.addEventListener("click", deletePostFromConfirmation);
 /*addEventListener("click", darkMode)*/
 
 function darkMode(e) {
-  let cards = document.getElementsByClassName ("card-body")
-  document.body.classList.toggle('dark-mode')
-  navbar.classList.toggle('dark-mode-nav')
-  for (let card of cards){
-     card.classList.toggle('dark-mode-card')
+  if (e.target.classList.contains("night")) {
+    e.target.src = "assets/img/night-mode.png";
+    e.target.classList.remove("night");
+  } else {
+    e.target.src = "assets/img/light-mode.png";
+    e.target.classList.add("night");
   }
 
+  let cards = document.getElementsByClassName("card-body");
+  document.body.classList.toggle("dark-mode");
+  navbar.classList.toggle("dark-mode-nav");
+  for (let card of cards) {
+    card.classList.toggle("dark-mode-card");
+  }
 }
 
-function playMusic(){
+function playMusic() {
   song.volume = 0.2;
-  song.play()
+  song.play();
 }
 
 async function getPosts() {
@@ -76,6 +83,7 @@ async function getPosts() {
             let newPost = document.createElement("article");
             newPost.classList.add("card");
             newPost.classList.add("m-4");
+            newPost.classList.add("border-0");
             //intersection effect
             newPost.classList.add("opacity-0");
             newPost.style.transform = "scale(0.85)";
@@ -84,18 +92,18 @@ async function getPosts() {
             newPost.style.width = "23rem";
             newPost.id = post.id;
             newPost.innerHTML = `
-            <img src="${image.download_url}" class="card-img-top" style="width: 23rem; height: 500px; object-fit: cover;" alt="image" load="lazy">
+            <img src="${image.download_url}" class="card-img-top" style="width: 100%; height: 500px; object-fit: cover;" alt="image" load="lazy">
             <div class="card-body">
               <p class="card-text" id="main-post-title-${post.id}">${post.title}</p>
             </div>
             <div class="btn-group" role="group">
-              <button type="button" onclick="getInfo(event)" userId='${post.userId}' postId='${post.id}' class="btn btn-outline-info view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal">
+              <button type="button" onclick="getInfo(event)" userId='${post.userId}' postId='${post.id}' class="btn  btn-outline-secondary view-more-btn" data-bs-toggle="modal" data-bs-target="#viewMoreModal">
                 <img src="https://www.shareicon.net/data/2015/09/20/104311_add_512x512.png" style="height:25px; pointer-events:none"/>
               </button> 
-              <button type="button" onclick="getUpdateModalInfo(event)" postId='${post.id}' class="btn btn-outline-warning view-more-btn" data-bs-toggle="modal" data-bs-target="#updateModal"> 
+              <button type="button" onclick="getUpdateModalInfo(event)" postId='${post.id}' class="btn  btn-outline-secondary view-more-btn" data-bs-toggle="modal" data-bs-target="#updateModal"> 
                 <img src="https://icons.veryicon.com/png/o/miscellaneous/linear-small-icon/edit-246.png" style="height:25px; pointer-events:none"/>
               </button> 
-              <button type="button" postId='${post.id}' onclick="deletePost(event)" class="btn btn-outline-danger">
+              <button type="button" postId='${post.id}' onclick="deletePost(event)" class="btn btn-outline-secondary ">
                 <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" style="height:25px; pointer-events:none"/>
               </button>
             </div>
