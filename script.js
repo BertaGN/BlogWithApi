@@ -29,6 +29,7 @@ loadComments.addEventListener("click", toggleCommentsVisibility);
 saveUpdateModalBtn.addEventListener("click", updatePost);
 
 viewMoreModal.addEventListener("hidden.bs.modal", function () {
+  postModalComments.innerHTML = "";
   postModalComments.classList.add("d-none");
   loadComments.innerText = "Load Comments";
 });
@@ -58,7 +59,7 @@ function playMusic() {
   song.play();
 }
 
-async function getPosts() {
+function getPosts() {
   fetch("https://randomuser.me/api/?results=10")
     .then((res) => {
       return res.json();
@@ -248,7 +249,6 @@ function updatePost(event) {
     },
   })
     .then((response) => {
-      console.log(response)
       if (response.status === 200) {
         let updateSuccessModal = document.getElementById(
           "updated-successfully"
@@ -268,7 +268,6 @@ function updatePost(event) {
 }
 
 let options = {
-  rootMargin: "0px",
   threshold: 0.2,
 };
 

@@ -1,12 +1,17 @@
-body {
-  background-color: blue;
-}
-
 header {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.card-img-top{
+  transition-duration: 0.3s;
+  filter: sepia(0.25);
+}
+.card-img-top:hover{
+  filter: sepia(0);
+}
+
 #dark-mode-btn {
+  cursor: pointer;
   height: 25px;
   margin: auto;
   position: absolute;
