@@ -34,6 +34,7 @@ viewMoreModal.addEventListener("hidden.bs.modal", function () {
 confirmDeleteModalBtn.addEventListener("click", deletePostFromConfirmation);
 
 function playMusic(){
+  song.volume = 0.2;
   song.play()
 }
 
