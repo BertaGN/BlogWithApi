@@ -1,3 +1,6 @@
+const playMusicModal = document.getElementById("playMusicModal");
+const playMusicBtn = document.getElementById("play-music-btn");
+const song = document.getElementById("song");
 const viewMoreModal = document.getElementById("viewMoreModal");
 const postModalTitle = document.getElementById("post-modal");
 const postModalBody = document.getElementById("modal-post-body");
@@ -17,6 +20,8 @@ const userImg = document.getElementById("user-img");
 let userId;
 let userImages = [];
 
+playMusicBtn.addEventListener('click', playMusic)
+
 document.addEventListener("load", getPosts());
 loadComments.addEventListener("click", toggleCommentsVisibility);
 saveUpdateModalBtn.addEventListener("click", updatePost);
@@ -27,6 +32,10 @@ viewMoreModal.addEventListener("hidden.bs.modal", function () {
 });
 
 confirmDeleteModalBtn.addEventListener("click", deletePostFromConfirmation);
+
+function playMusic(){
+  song.play()
+}
 
 async function getPosts() {
   fetch("https://randomuser.me/api/?results=10")
@@ -87,6 +96,12 @@ async function getPosts() {
     .catch((err) => {
       console.log(err);
     });
+
+  setTimeout(() => {
+    let musicModal = new bootstrap.Modal(playMusicModal);
+
+    musicModal.show();
+  }, 1000);
 }
 
 function getInfo(event) {
