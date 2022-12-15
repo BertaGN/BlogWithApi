@@ -172,6 +172,7 @@ function getInfo(event) {
 
 function toggleCommentsVisibility() {
   postModalComments.classList.toggle("d-none");
+  postModalComments.scrollTop = 0;
   if (postModalComments.classList.contains("d-none")) {
     loadComments.innerText = "Load Comments";
   } else {
