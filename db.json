@@ -8,8 +8,8 @@
     },
     {
       "id": 4,
-      "title": "You’re braver than you believe, stronger than you seem, and smarter than you think.",
-      "body": "Be yourself.",
+      "title": "You are braver than you believe, stronger than you seem, and smarter than you think.",
+      "body": "Be yourself, be brave.",
       "userId": 1
     },
     {
@@ -20,15 +20,15 @@
     },
     {
       "id": 6,
-      "title": "Life isn’t about finding yourself. Life is about creating yourself",
+      "title": "Your life isn’t about finding yourself. Life is about creating yourself",
       "body": "Be creative.",
       "userId": 1
     },
     {
-      "userId": 1,
       "id": 7,
       "title": "It is not the mountain we conquer, but ourselves",
-      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas",
+      "userId": 1
     },
     {
       "userId": 1,
@@ -59,12 +59,6 @@
       "id": 12,
       "title": "in quibusdam tempore odit est dolorem",
       "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
-    },
-    {
-      "userId": 2,
-      "id": 13,
-      "title": "dolorum ut in voluptas mollitia et saepe quo animi",
-      "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
     },
     {
       "userId": 2,
@@ -233,12 +227,6 @@
       "id": 43,
       "title": "eligendi iste nostrum consequuntur adipisci praesentium sit beatae perferendis",
       "body": "similique fugit est\nillum et dolorum harum et voluptate eaque quidem\nexercitationem quos nam commodi possimus cum odio nihil nulla\ndolorum exercitationem magnam ex et a et distinctio debitis"
-    },
-    {
-      "userId": 5,
-      "id": 44,
-      "title": "optio dolor molestias sit",
-      "body": "temporibus est consectetur dolore\net libero debitis vel velit laboriosam quia\nipsum quibusdam qui itaque fuga rem aut\nea et iure quam sed maxime ut distinctio quae"
     },
     {
       "userId": 5,
@@ -885,14 +873,6 @@
       "download_url": "https://picsum.photos/id/12/2500/1667"
     },
     {
-      "id": "13",
-      "author": "Paul Jarvis",
-      "width": 2500,
-      "height": 1667,
-      "url": "https://unsplash.com/photos/3MtiSMdnoCo",
-      "download_url": "https://picsum.photos/id/13/2500/1667"
-    },
-    {
       "id": "14",
       "author": "Paul Jarvis",
       "width": 2500,
@@ -1115,14 +1095,6 @@
       "height": 831,
       "url": "https://unsplash.com/photos/IoCWq07GaG4",
       "download_url": "https://picsum.photos/id/43/1280/831"
-    },
-    {
-      "id": "44",
-      "author": "Christopher Sardegna",
-      "width": 4272,
-      "height": 2848,
-      "url": "https://unsplash.com/photos/R1E6x8U83Ho",
-      "download_url": "https://picsum.photos/id/44/4272/2848"
     },
     {
       "id": "45",
@@ -1923,41 +1895,6 @@
       "name": "expedita libero quos cum commodi ad",
       "email": "Americo@estrella.net",
       "body": "error eum quia voluptates alias repudiandae\naccusantium veritatis maiores assumenda\nquod impedit animi tempore veritatis\nanimi et et officiis labore impedit blanditiis repudiandae"
-    },
-    {
-      "postId": 13,
-      "id": 61,
-      "name": "quidem itaque dolores quod laborum aliquid molestiae",
-      "email": "Aurelio.Pfeffer@griffin.ca",
-      "body": "deserunt cumque laudantium\net et odit quia sint quia quidem\nquibusdam debitis fuga in tempora deleniti\nimpedit consequatur veniam reiciendis autem porro minima"
-    },
-    {
-      "postId": 13,
-      "id": 62,
-      "name": "libero beatae consequuntur optio est hic",
-      "email": "Vesta_Crooks@dora.us",
-      "body": "tempore dolorum corrupti facilis\npraesentium sunt iste recusandae\nunde quisquam similique\nalias consequuntur voluptates velit"
-    },
-    {
-      "postId": 13,
-      "id": 63,
-      "name": "occaecati dolor accusantium et quasi architecto aut eveniet fugiat",
-      "email": "Margarett_Klein@mike.biz",
-      "body": "aut eligendi et molestiae voluptatum tempora\nofficia nihil sit voluptatem aut deleniti\nquaerat consequatur eaque\nsapiente tempore commodi tenetur rerum qui quo"
-    },
-    {
-      "postId": 13,
-      "id": 64,
-      "name": "consequatur aut ullam voluptas dolorum voluptatum sequi et",
-      "email": "Freida@brandt.tv",
-      "body": "sed illum quis\nut aut culpa labore aspernatur illo\ndolorem quia vitae ut aut quo repellendus est omnis\nesse at est debitis"
-    },
-    {
-      "postId": 13,
-      "id": 65,
-      "name": "earum ea ratione numquam",
-      "email": "Mollie@agustina.name",
-      "body": "qui debitis vitae ratione\ntempora impedit aperiam porro molestiae placeat vero laboriosam recusandae\npraesentium consequatur facere et itaque quidem eveniet\nmagnam natus distinctio sapiente"
     },
     {
       "postId": 14,
@@ -2938,41 +2875,6 @@
       "name": "sint culpa cupiditate ut sit quas qui voluptas qui",
       "email": "Amy@reymundo.org",
       "body": "esse ab est deleniti dicta non\ninventore veritatis cupiditate\neligendi sequi excepturi assumenda a harum sint aut eaque\nrerum molestias id excepturi quidem aut"
-    },
-    {
-      "postId": 44,
-      "id": 216,
-      "name": "voluptatem esse sint alias",
-      "email": "Jaylan.Mayert@norbert.biz",
-      "body": "minima quaerat voluptatibus iusto earum\nquia nihil et\nminus deleniti aspernatur voluptatibus tempore sit molestias\narchitecto velit id debitis"
-    },
-    {
-      "postId": 44,
-      "id": 217,
-      "name": "eos velit velit esse autem minima voluptas",
-      "email": "Cristina.DAmore@destini.biz",
-      "body": "aperiam rerum aut provident cupiditate laboriosam\nenim placeat aut explicabo\nvoluptatum similique rerum eaque eligendi\nnobis occaecati perspiciatis sint ullam"
-    },
-    {
-      "postId": 44,
-      "id": 218,
-      "name": "voluptatem qui deserunt dolorum in voluptates similique et qui",
-      "email": "Ettie_Bashirian@lambert.biz",
-      "body": "rem qui est\nfacilis qui voluptatem quis est veniam quam aspernatur dicta\ndolore id sapiente saepe consequatur\nenim qui impedit culpa ex qui voluptas dolor"
-    },
-    {
-      "postId": 44,
-      "id": 219,
-      "name": "qui unde recusandae omnis ut explicabo neque magni veniam",
-      "email": "Lizeth@kellen.org",
-      "body": "est et dolores voluptas aut molestiae nam eos saepe\nexpedita eum ea tempore sit iure eveniet\niusto enim quos quo\nrepellendus laudantium eum fugiat aut et"
-    },
-    {
-      "postId": 44,
-      "id": 220,
-      "name": "vel autem quia in modi velit",
-      "email": "Vladimir_Schumm@sharon.tv",
-      "body": "illum ea eum quia\ndoloremque modi ducimus voluptatum eaque aperiam accusamus eos quia\nsed rerum aperiam sunt quo\nea veritatis natus eos deserunt voluptas ea voluptate"
     },
     {
       "postId": 45,

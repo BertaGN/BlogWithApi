@@ -4,7 +4,7 @@ header {
 
 .card-img-top{
   transition-duration: 0.3s;
-  filter: sepia(0.25);
+  filter: sepia(0.35);
 }
 .card-img-top:hover{
   filter: sepia(0);

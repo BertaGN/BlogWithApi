@@ -2,7 +2,7 @@ const playMusicModal = document.getElementById("playMusicModal");
 const playMusicBtn = document.getElementById("play-music-btn");
 const song = document.getElementById("song");
 const viewMoreModal = document.getElementById("viewMoreModal");
-const postModalTitle = document.getElementById("post-modal");
+const postModalTitle = document.getElementById("post-modal-view");
 const postModalBody = document.getElementById("modal-post-body");
 const postModalUserName = document.getElementById("modal-user-name");
 const postModalUserEmail = document.getElementById("modal-user-email");
@@ -35,7 +35,6 @@ viewMoreModal.addEventListener("hidden.bs.modal", function () {
 });
 
 confirmDeleteModalBtn.addEventListener("click", deletePostFromConfirmation);
-/*addEventListener("click", darkMode)*/
 
 function darkMode(e) {
   if (e.target.classList.contains("night")) {
@@ -136,6 +135,8 @@ function getInfo(event) {
   fetch(`http://localhost:3000/posts/${postId}`)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data)
+      console.log(postModalTitle.style)
       postModalTitle.innerText = data.title;
       postModalBody.innerText = data.body;
     })
